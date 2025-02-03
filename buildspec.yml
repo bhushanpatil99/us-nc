@@ -3,22 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Nothing to install in this simple build."
-
-  pre_build:
-    commands:
-      - echo "Preparing for build."
-
+      - echo "Install phase - nothing to install"
   build:
     commands:
-      - echo "Building project... (In this case, no build is needed for static HTML)."
-
-  post_build:
-    commands:
-      - echo "Build completed!"
+      - echo "Build started on `date`"
+      - mkdir -p build
+      - cp index.html build/
 
 artifacts:
   files:
-    - 'index.html'
-    - 'appspec.yml'
-    - 'scripts/**'
+    - build/index.html
